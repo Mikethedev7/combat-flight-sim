@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sky Assault Multiplayer</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="gameWrap">
+      <div id="hud">
+        <div class="hudGroup">
+          <span id="playerLabel">Pilot</span>
+          <span id="scoreLabel">Score: 0</span>
+        </div>
+        <div class="hudGroup">
+          <span id="healthLabel">Hull: 100</span>
+          <span id="weaponLabel">Gun</span>
+        </div>
+      </div>
+
+      <div id="menu" class="panel">
+        <h1>Sky Assault Multiplayer</h1>
+
+        <div class="section">
+          <h2>Callsign</h2>
+          <input id="pilotName" type="text" maxlength="12" value="Ace" />
+        </div>
+
+        <div class="section">
+          <h2>Choose Aircraft</h2>
+          <div class="cardRow" id="planeRow">
+            <button class="planeBtn selected" data-plane="interceptor">Interceptor</button>
+            <button class="planeBtn" data-plane="striker">Striker</button>
+            <button class="planeBtn" data-plane="guardian">Guardian</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Choose Weapon</h2>
+          <div class="cardRow" id="weaponRow">
+            <button class="weaponBtn selected" data-weapon="gun">Machine Gun</button>
+            <button class="weaponBtn" data-weapon="scatter">Scatter</button>
+            <button class="weaponBtn" data-weapon="missile">Missiles</button>
+            <button class="weaponBtn" data-weapon="plasma">Plasma</button>
+          </div>
+        </div>
+
+        <button id="joinBtn" class="primaryBtn">Launch</button>
+      </div>
+
+      <canvas id="gameCanvas" width="1400" height="900"></canvas>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>
